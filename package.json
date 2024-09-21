@@ -10,17 +10,33 @@
     "Programming Languages"
   ],
   "contributes": {
-    "languages": [{
-      "id": "pnm",
-      "aliases": ["Netpbm", "pnm"],
-      "extensions": [".pnm",".pbm",".pgm",".ppm"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "pnm",
-      "scopeName": "source.pnm",
-      "path": "./syntaxes/pnm.tmLanguage.json"
-    }]
+    "languages": [
+      {
+        "id": "pnm",
+        "aliases": [
+          "Netpbm",
+          "pnm"
+        ],
+        "extensions": [
+          ".pnm",
+          ".pbm",
+          ".pgm",
+          ".ppm"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "pnm",
+        "scopeName": "source.pnm",
+        "path": "./syntaxes/pnm.tmLanguage.json"
+      }
+    ]
+  },
+  "scripts": {
+    "format": "prettier --write .",
+    "prettier": "prettier --check ."
   },
   "devDependencies": {
     "prettier": "^3.3.3"
