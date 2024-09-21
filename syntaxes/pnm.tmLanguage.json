@@ -3,29 +3,150 @@
   "name": "Netpbm",
   "patterns": [
     {
-      "include": "#keywords"
+      "include": "#comment"
     },
     {
-      "include": "#strings"
+      "include": "#pbm"
+    },
+    {
+      "include": "#pgm"
+    },
+    {
+      "include": "#ppm"
     }
   ],
   "repository": {
-    "keywords": {
+    "comment": {
       "patterns": [
         {
-          "name": "keyword.control.pnm",
-          "match": "\\b(if|while|for|return)\\b"
+          "name": "comment.line.number-sign.pnm",
+          "match": "#.*"
         }
       ]
     },
-    "strings": {
-      "name": "string.quoted.double.pnm",
-      "begin": "\"",
-      "end": "\"",
+    "pbm": {
+      "begin": "^P1\\b",
+      "beginCaptures": {
+        "0": { "name": "keyword.control.magic-number.pnm.pbm" }
+      },
+      "end": "",
       "patterns": [
+        { "include": "#comment" },
         {
-          "name": "constant.character.escape.pnm",
-          "match": "\\\\."
+          "begin": "\\b\\d+\\b",
+          "beginCaptures": {
+            "0": { "name": "constant.numeric.height.pnm.pbm" }
+          },
+          "end": "",
+          "patterns": [
+            { "include": "#comment" },
+            {
+              "begin": "\\b\\d+\\b",
+              "beginCaptures": {
+                "0": { "name": "constant.numeric.width.pnm.pbm" }
+              },
+              "end": "",
+              "patterns": [
+                { "include": "#comment" },
+                {
+                  "name": "constant.numeric.value.pnm.pbm",
+                  "match": "\\b[01]\\b"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "pgm": {
+      "begin": "^P2\\b",
+      "beginCaptures": {
+        "0": { "name": "keyword.control.magic-number.pnm.pgm" }
+      },
+      "end": "",
+      "patterns": [
+        { "include": "#comment" },
+        {
+          "begin": "\\b\\d+\\b",
+          "beginCaptures": {
+            "0": { "name": "constant.numeric.height.pnm.pgm" }
+          },
+          "end": "",
+          "patterns": [
+            { "include": "#comment" },
+            {
+              "begin": "\\b\\d+\\b",
+              "beginCaptures": {
+                "0": { "name": "constant.numeric.width.pnm.pgm" }
+              },
+              "end": "",
+              "patterns": [
+                { "include": "#comment" },
+                {
+                  "begin": "\\b\\d+\\b",
+                  "beginCaptures": {
+                    "0": { "name": "constant.numeric.maximum.pnm.pgm" }
+                  },
+                  "end": "",
+                  "patterns": [
+                    { "include": "#comment" },
+                    {
+                      "name": "constant.numeric.value.pnm.pgm",
+                      "match": "\\b\\d+\\b"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "ppm": {
+      "begin": "^P3\\b",
+      "beginCaptures": {
+        "0": { "name": "keyword.control.magic-number.pnm.ppm" }
+      },
+      "end": "",
+      "patterns": [
+        { "include": "#comment" },
+        {
+          "begin": "\\b\\d+\\b",
+          "beginCaptures": {
+            "0": { "name": "constant.numeric.height.pnm.ppm" }
+          },
+          "end": "",
+          "patterns": [
+            { "include": "#comment" },
+            {
+              "begin": "\\b\\d+\\b",
+              "beginCaptures": {
+                "0": { "name": "constant.numeric.width.pnm.ppm" }
+              },
+              "end": "",
+              "patterns": [
+                { "include": "#comment" },
+                {
+                  "begin": "\\b\\d+\\b",
+                  "beginCaptures": {
+                    "0": { "name": "constant.numeric.maximum.pnm.ppm" }
+                  },
+                  "end": "",
+                  "patterns": [
+                    { "include": "#comment" },
+                    {
+                      "match": "\\b(\\d+)\\s+(\\d+)\\s+(\\d+)\\b",
+                      "captures": {
+                        "1": { "name": "constant.numeric.value.red.pnm.ppm" },
+                        "2": { "name": "constant.numeric.value.green.pnm.ppm" },
+                        "3": { "name": "constant.numeric.value.blue.pnm.ppm" }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ]
     }
