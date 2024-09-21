@@ -1,0 +1,25 @@
+{
+  "name": "netpbm",
+  "displayName": "Netpbm",
+  "description": "Language support for `.pnm`, `.pbm`, `.pgm`, and `.ppm` files ",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "pnm",
+      "aliases": ["Netpbm", "pnm"],
+      "extensions": [".pnm",".pbm",".pgm",".ppm"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "pnm",
+      "scopeName": "source.pnm",
+      "path": "./syntaxes/pnm.tmLanguage.json"
+    }]
+  }
+}
