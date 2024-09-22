@@ -1,4 +1,5 @@
-.vscode/**
-.vscode-test/**
+.github
+.vscode
+images
+node_modules
 .gitignore
-images/**
