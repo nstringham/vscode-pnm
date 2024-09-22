@@ -3,6 +3,7 @@
   "displayName": "Netpbm",
   "description": "Language support for `.pnm`, `.pbm`, `.pgm`, and `.ppm` files",
   "version": "0.0.1",
+  "publisher": "nate-stringham",
   "repository": {
     "type": "git",
     "url": "https://github.com/nstringham/vscode-pnm.git"
