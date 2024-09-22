@@ -1,8 +1,13 @@
 {
   "name": "netpbm",
   "displayName": "Netpbm",
-  "description": "Language support for `.pnm`, `.pbm`, `.pgm`, and `.ppm` files ",
+  "description": "Language support for `.pnm`, `.pbm`, `.pgm`, and `.ppm` files",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nstringham/vscode-pnm.git"
+  },
+  "license": "MIT",
   "engines": {
     "vscode": "^1.93.0"
   },
