@@ -2,7 +2,7 @@
   "name": "netpbm",
   "displayName": "Netpbm",
   "description": "Language support for `.pnm`, `.pbm`, `.pgm`, and `.ppm` files",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "publisher": "nate-stringham",
   "repository": {
     "type": "git",
