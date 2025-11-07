@@ -114,7 +114,7 @@ export class Parser {
     while (true) {
       const token = this.tokenizer.nextToken();
       switch (token.type) {
-        case "integer":
+        case "integer": {
           const value = parseInt(token.content, 10);
           if (value < min) {
             throw new Diagnostic(token.range, `${name} must be at least ${min}`);
@@ -127,6 +127,7 @@ export class Parser {
             value: parseInt(token.content, 10),
             range: token.range,
           };
+        }
 
         case "whitespace":
         case "comment":
