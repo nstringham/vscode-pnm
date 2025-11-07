@@ -36,9 +36,3 @@ This extension contributes the following settings:
 
 Calling out known issues can help limit users opening duplicate issues against your extension.
 -->
-
-## Release Notes
-
-### 1.0.0
-
-- Basic syntax highlighting
