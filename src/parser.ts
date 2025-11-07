@@ -102,9 +102,9 @@ export class Parser {
     if (token.type != "magic-number" || (this.fileType != undefined && this.fileType != token.content)) {
       const range = new Range(new Position(0, 0), new Position(0, 2));
       if (this.fileType != undefined) {
-        throw new Diagnostic(range, `${fileTypeNames[this.fileType]} files must start with "${this.fileType}"`);
+        throw new ParsingError(range, `${fileTypeNames[this.fileType]} files must start with "${this.fileType}"`);
       } else {
-        throw new Diagnostic(range, `Netpbm files must start with "P1", "P2", or "P3"`);
+        throw new ParsingError(range, `Netpbm files must start with "P1", "P2", or "P3"`);
       }
     }
     this.fileType = token.content as FileType;
@@ -118,10 +118,10 @@ export class Parser {
         case "integer": {
           const value = parseInt(token.content, 10);
           if (value < min) {
-            throw new Diagnostic(token.range, `${name} must be at least ${min}`);
+            throw new ParsingError(token.range, `${name} must be at least ${min}`);
           }
           if (value > max) {
-            throw new Diagnostic(token.range, `${name} cannot be more than ${max}`);
+            throw new ParsingError(token.range, `${name} cannot be more than ${max}`);
           }
 
           return {
@@ -136,10 +136,10 @@ export class Parser {
 
         case "magic-number":
         case "invalid":
-          throw new Diagnostic(token.range, `Invalid ${name}. "${token.content}" is not an integer`);
+          throw new ParsingError(token.range, `Invalid ${name}. "${token.content}" is not an integer`);
 
         case "end-of-file":
-          throw new Diagnostic(token.range, `Missing ${name}. Please provide an integer`);
+          throw new ParsingError(token.range, `Missing ${name}. Please provide an integer`);
       }
     }
   }
@@ -158,8 +158,21 @@ export class Parser {
         case "integer":
         case "magic-number":
         case "invalid":
-          throw new Diagnostic(token.range, `Expected end of file but found ${token.content}`);
+          throw new ParsingError(token.range, `Expected end of file but found ${token.content}`);
       }
     }
+  }
+}
+
+export class ParsingError extends Error {
+  constructor(
+    public readonly range: Range,
+    message: string,
+  ) {
+    super(message);
+  }
+
+  toDiagnostic(): Diagnostic {
+    return new Diagnostic(this.range, this.message);
   }
 }

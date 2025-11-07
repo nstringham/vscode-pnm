@@ -1,6 +1,6 @@
-import { Diagnostic, DiagnosticCollection, Disposable, languages, TextDocument, workspace } from "vscode";
+import { DiagnosticCollection, Disposable, languages, TextDocument, workspace } from "vscode";
 import { LANGUAGE_ID } from "./extension";
-import { Parser } from "./parser";
+import { Parser, ParsingError } from "./parser";
 
 export function startDiagnostics(): Disposable {
   const diagnosticCollection = languages.createDiagnosticCollection(LANGUAGE_ID);
@@ -28,8 +28,8 @@ function updateDiagnostics(document: TextDocument, collection: DiagnosticCollect
     try {
       validateDocument(document);
     } catch (error) {
-      if (error instanceof Diagnostic) {
-        collection.set(document.uri, [error]);
+      if (error instanceof ParsingError) {
+        collection.set(document.uri, [error.toDiagnostic()]);
       } else {
         throw error;
       }
