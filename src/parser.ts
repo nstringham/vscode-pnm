@@ -118,10 +118,10 @@ export class Parser {
         case "integer": {
           const value = parseInt(token.content, 10);
           if (value < min) {
-            throw new ParsingError(token.range, `${name} must be at least ${min}`);
+            throw new ParsingError(token.range, `${name} must be at least ${min.toFixed()}`);
           }
           if (value > max) {
-            throw new ParsingError(token.range, `${name} cannot be more than ${max}`);
+            throw new ParsingError(token.range, `${name} cannot be more than ${max.toFixed()}`);
           }
 
           return {
