@@ -12,7 +12,7 @@ export function startDiagnostics(): Disposable {
   let changeTimeout: NodeJS.Timeout;
   const changeDetector = workspace.onDidChangeTextDocument((changes) => {
     clearTimeout(changeTimeout);
-    changeTimeout = setTimeout(updateDiagnostics, 300, changes.document, diagnosticCollection);
+    changeTimeout = setTimeout(updateDiagnostics, 500, changes.document, diagnosticCollection);
   });
 
   return Disposable.from(diagnosticCollection, openDetector, saveDetector, changeDetector);
