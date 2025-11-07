@@ -5,9 +5,13 @@ import { Parser } from "./parser";
 export function startDiagnostics(): Disposable {
   const diagnosticCollection = languages.createDiagnosticCollection(LANGUAGE_ID);
 
-  const openDetector = workspace.onDidOpenTextDocument((document) => updateDiagnostics(document, diagnosticCollection));
+  const openDetector = workspace.onDidOpenTextDocument((document) => {
+    updateDiagnostics(document, diagnosticCollection);
+  });
 
-  const saveDetector = workspace.onDidSaveTextDocument((document) => updateDiagnostics(document, diagnosticCollection));
+  const saveDetector = workspace.onDidSaveTextDocument((document) => {
+    updateDiagnostics(document, diagnosticCollection);
+  });
 
   let changeTimeout: NodeJS.Timeout;
   const changeDetector = workspace.onDidChangeTextDocument((changes) => {
