@@ -39,6 +39,7 @@ class Tokenizer {
 
     for (const match of matches) {
       const content = match[0];
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion -- indices always exists because regex has the `d` flag
       const [start, end] = match.indices![0];
 
       let type: Token["type"];

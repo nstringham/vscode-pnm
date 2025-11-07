@@ -16,6 +16,12 @@ export default defineConfig(
         projectService: true,
       },
     },
+    rules: {
+      "@typescript-eslint/no-unnecessary-condition": [
+        "error",
+        { allowConstantLoopConditions: "only-allowed-literals" },
+      ],
+    },
   },
   {
     files: ["*.js", "*.mjs"],
