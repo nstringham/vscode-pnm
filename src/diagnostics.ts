@@ -42,9 +42,9 @@ function validateDocument(document: TextDocument): void {
 
   const fileType = parser.expectMagicNumber();
 
-  const width = parser.expectInteger("height", 1, Number.MAX_SAFE_INTEGER).value;
+  const width = parser.expectInteger("width", 1, Number.MAX_SAFE_INTEGER).value;
 
-  const height = parser.expectInteger("width", 1, Number.MAX_SAFE_INTEGER).value;
+  const height = parser.expectInteger("height", 1, Number.MAX_SAFE_INTEGER).value;
 
   const maxValue = fileType === "P1" ? 1 : parser.expectInteger("max value", 1, 65535).value;
 
