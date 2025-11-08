@@ -125,7 +125,7 @@ export class Parser {
           }
 
           return {
-            value: parseInt(token.content, 10),
+            value,
             range: token.range,
           };
         }
