@@ -5,4 +5,4 @@ node_modules
 .gitignore
 src
 tsconfig.json
-prettier.config.js
+*.config.mjs
