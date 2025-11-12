@@ -4,7 +4,9 @@ Language support for `.pnm`, `.pbm`, `.pgm`, and `.ppm` files
 
 ## Features
 
-### Syntax highlighting
+- Error checking
+- Syntax highlighting
+- Auto formatting
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="images/syntax-highlighting-dark.webp">
