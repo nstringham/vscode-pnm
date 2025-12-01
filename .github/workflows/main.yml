@@ -10,7 +10,7 @@ jobs:
     name: Prettier
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
         with:
           cache: "npm"
@@ -20,7 +20,7 @@ jobs:
     name: ESLint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
         with:
           cache: "npm"
@@ -31,7 +31,7 @@ jobs:
     name: Build VSIX package
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
         with:
           cache: "npm"
@@ -51,7 +51,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
         with:
           cache: "npm"
@@ -78,7 +78,7 @@ jobs:
     needs: package
     if: startsWith(github.ref, 'refs/tags/')
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
         with:
           cache: "npm"
