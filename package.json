@@ -13,7 +13,10 @@
     "vscode": "^1.105.0"
   },
   "categories": [
-    "Programming Languages"
+    "Programming Languages", "Formatters"
+  ],
+  "keywords": [
+    "netpbm", "formatting"
   ],
   "main": "./out/extension.js",
   "contributes": {
