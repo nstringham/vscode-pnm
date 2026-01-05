@@ -13,7 +13,7 @@
     "vscode": "^1.105.0"
   },
   "categories": [
-    "Programming Languages"
+    "Programming Languages", "Formatters"
   ],
   "main": "./out/extension.js",
   "contributes": {
