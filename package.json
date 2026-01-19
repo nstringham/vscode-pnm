@@ -16,7 +16,14 @@
     "Programming Languages", "Formatters"
   ],
   "keywords": [
-    "netpbm", "formatting"
+    "format",
+    "highlight",
+    "error",
+    "netpbm",
+    "pnm",
+    "pbm",
+    "pgm",
+    "ppm"
   ],
   "main": "./out/extension.js",
   "contributes": {
