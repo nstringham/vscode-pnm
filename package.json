@@ -73,7 +73,7 @@
     "publish": "vsce publish"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.1",
+    "@eslint/js": "^10.0.1",
     "@types/node": "^24.11.0",
     "@types/vscode": "^1.105.0",
     "@vscode/vsce": "^3.7.1",
