@@ -1,6 +1,6 @@
 {
   "oxc.enable": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "oxc.oxc-vscode",
   "files.eol": "\n",
   "files.insertFinalNewline": true
 }

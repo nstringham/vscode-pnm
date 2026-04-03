@@ -67,8 +67,8 @@
     "compile": "tsc",
     "watch": "tsc -watch",
     "package": "vsce package",
-    "format": "prettier --write .",
-    "prettier": "prettier --check .",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
     "lint": "oxlint --deny-warnings",
     "lint:fix": "oxlint --fix",
     "publish": "vsce publish"
@@ -77,9 +77,9 @@
     "@types/node": "^24.12.0",
     "@types/vscode": "^1.105.0",
     "@vscode/vsce": "^3.7.1",
+    "oxfmt": "^0.43.0",
     "oxlint": "^1.58.0",
     "oxlint-tsgolint": "^0.19.0",
-    "prettier": "^3.8.1",
     "typescript": "^5.9.3"
   }
 }
