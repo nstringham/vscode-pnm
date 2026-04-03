@@ -107,6 +107,7 @@ export class Parser {
         throw new ParsingError(range, `Netpbm files must start with "P1", "P2", or "P3"`);
       }
     }
+    // oxlint-disable-next-line typescript/no-unsafe-type-assertion -- token.content is FileType here because it is equal to this.fileType
     this.fileType = token.content as FileType;
     return this.fileType;
   }
