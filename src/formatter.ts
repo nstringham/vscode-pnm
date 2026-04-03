@@ -10,7 +10,7 @@ export const formatter: DocumentFormattingEditProvider = {
       const leadingWhitespace = /^\s+/d.exec(line.text);
       if (leadingWhitespace != null) {
         // oxlint-disable-next-line typescript/no-non-null-assertion -- indices always exists because regex has the `d` flag
-        const [start, end] = leadingWhitespace.indices![0];
+        const [start, end] = leadingWhitespace.indices![0]!;
         const range = new Range(i, start, i, end);
         edits.push(TextEdit.delete(range));
       }
@@ -18,7 +18,7 @@ export const formatter: DocumentFormattingEditProvider = {
       const trailingWhitespace = /\s+$/d.exec(line.text);
       if (trailingWhitespace != null) {
         // oxlint-disable-next-line typescript/no-non-null-assertion -- indices always exists because regex has the `d` flag
-        const [start, end] = trailingWhitespace.indices![0];
+        const [start, end] = trailingWhitespace.indices![0]!;
         const range = new Range(i, start, i, end);
         edits.push(TextEdit.delete(range));
       }
