@@ -10,7 +10,7 @@
   },
   "license": "MIT",
   "engines": {
-    "vscode": "^1.105.0"
+    "vscode": "^1.110.0"
   },
   "categories": [
     "Programming Languages",
@@ -74,8 +74,8 @@
     "publish": "vsce publish"
   },
   "devDependencies": {
-    "@types/node": "^24.12.0",
-    "@types/vscode": "^1.105.0",
+    "@types/node": "^22.19.15",
+    "@types/vscode": "^1.110.0",
     "@vscode/vsce": "^3.7.1",
     "oxfmt": "^0.43.0",
     "oxlint": "^1.58.0",
