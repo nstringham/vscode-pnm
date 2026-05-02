@@ -80,6 +80,6 @@
     "oxfmt": "^0.47.0",
     "oxlint": "^1.62.0",
     "oxlint-tsgolint": "^0.19.0",
-    "typescript": "^6.0.2"
+    "typescript": "^6.0.3"
   }
 }
