@@ -11,35 +11,38 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v6
       - uses: actions/setup-node@v6
         with:
           node-version: 22
-          cache: "npm"
-      - run: npm ci
-      - run: npm run format:check
+          cache: "pnpm"
+      - run: pnpm ci
+      - run: pnpm run format:check
   lint:
     name: Lint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v6
       - uses: actions/setup-node@v6
         with:
           node-version: 22
-          cache: "npm"
-      - run: npm ci
-      - run: npm run lint
+          cache: "pnpm"
+      - run: pnpm ci
+      - run: pnpm run lint
 
   package:
     name: Build VSIX package
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v6
       - uses: actions/setup-node@v6
         with:
           node-version: 22
-          cache: "npm"
-      - run: npm ci
-      - run: npm run package
+          cache: "pnpm"
+      - run: pnpm ci
+      - run: pnpm run package
       - uses: actions/upload-artifact@v7
         with:
           name: vsix
@@ -55,11 +58,12 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v6
       - uses: actions/setup-node@v6
         with:
           node-version: 22
-          cache: "npm"
-      - run: npm ci
+          cache: "pnpm"
+      - run: pnpm ci
       - uses: actions/download-artifact@v8
         with:
           name: vsix
@@ -83,11 +87,12 @@ jobs:
     if: startsWith(github.ref, 'refs/tags/')
     steps:
       - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v6
       - uses: actions/setup-node@v6
         with:
           node-version: 22
-          cache: "npm"
-      - run: npm ci
-      - run: npm run publish
+          cache: "pnpm"
+      - run: pnpm ci
+      - run: pnpm run publish
         env:
           VSCE_PAT: ${{ secrets.VSCE_PAT }}

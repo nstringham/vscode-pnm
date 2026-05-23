@@ -63,7 +63,7 @@
     ]
   },
   "scripts": {
-    "vscode:prepublish": "npm run compile",
+    "vscode:prepublish": "pnpm run compile",
     "compile": "tsc",
     "watch": "tsc -watch",
     "package": "vsce package",
@@ -81,5 +81,15 @@
     "oxlint": "^1.62.0",
     "oxlint-tsgolint": "^0.19.0",
     "typescript": "^6.0.3"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": ">=11"
+    },
+    "runtime": {
+      "name": "node",
+      "version": ">=22"
+    }
   }
 }
