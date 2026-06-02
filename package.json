@@ -78,7 +78,7 @@
     "@types/vscode": "^1.110.0",
     "@vscode/vsce": "^3.7.1",
     "oxfmt": "^0.53.0",
-    "oxlint": "^1.62.0",
+    "oxlint": "^1.68.0",
     "oxlint-tsgolint": "^0.23.0",
     "typescript": "^6.0.3"
   }
