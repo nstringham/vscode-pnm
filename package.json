@@ -76,7 +76,7 @@
   "devDependencies": {
     "@types/node": "^22.19.15",
     "@types/vscode": "^1.110.0",
-    "@vscode/vsce": "^3.7.1",
+    "@vscode/vsce": "^4.0.0",
     "oxfmt": "^0.72.0",
     "oxlint": "^1.85.0",
     "oxlint-tsgolint": "^7.0.2003",
